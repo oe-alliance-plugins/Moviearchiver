@@ -1,44 +1,77 @@
-enigma2-plugin-extensions-moviearchiver
-============================
 
-![Screenshot](https://raw.github.com/MovieArchiver/enigma2-plugin-extensions-moviearchiver/master/src/plugin.png)
+# <p align="center">Moviearchiver Plugin for Enigma2 (E²) ![GitHub repo size](https://img.shields.io/github/repo-size/oe-alliance-plugins/Moviearchiver.svg)</p>
 
-
-Archivieren:
---------
-Der MovieArchiver archiviert automatisch Aufnahmen von beispielsweise der eingebauten Festplatte auf eine externen USB Festplatte.
-Hat man mehrere Festplatten ist so sichergestellt das die Platte auf der aufgenommen wird Platz für neue Aufnahmen hat.
-
-Ist "Automatische Archivieren" aktiviert wird nach jeder Aufnahme geprüft ob das eingestellte Limit erreicht wurde und ggf. so viel alte Aufnahme in das Archiv
-verschoben bis das Limit an Festplattenplatz wieder frei ist.
-
-Folgende Dateienendungen werden archiviert:
-.ts, .avi, .mkv, .mp4, .iso
-
-Inkl. der entsprechenden Metadateien wie z.B.:
-.ts.cuts und .ts.meta
---------
+**Archive or Backup your Movielist automatically. MovieArchiver by svox**
 
 
-Backup:
---------
-Alternativ kann er auch als Backup Programm genutzt werden (über die Einstellungen einstellbar).
-Zum Backup werden alle Dateien (es gibt keine Dateiendungs-Einschränkung) hinzugefügt die sich im angegebenen Verzeichnis (inkl. aller Unterverzeichnisse) befinden.
---------
+## Github status
+[![Build](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/buildbot.yml/badge.svg)](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/buildbot.yml)
+[![Lint Status](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/pylint.yml/badge.svg)](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/pylint.yml)
+[![Ruff Status](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/ruff.yml/badge.svg)](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/ruff.yml)
+[![Build Status](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/compile.yml/badge.svg)](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/compile.yml)
+[![AUTOTAG](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/autotag.yml/badge.svg)](https://github.com/oe-alliance-plugins/Moviearchiver/actions/workflows/autotag.yml)
 
-Deaktiviert kann der MovieArchiver auch manuel über die Einstellungsseite gestartet werden.
 
+[![Plugin Version](https://img.shields.io/github/v/tag/oe-alliance-plugins/Moviearchiver?label=Latest%20Version&color=darkviolet)](https://github.com/oe-alliance-plugins/Moviearchiver/tags)
+[![Latest Release](https://img.shields.io/github/release-date/oe-alliance-plugins/Moviearchiver?label=From&color=darkviolet)](https://github.com/oe-alliance-plugins/Moviearchiver/releases/latest)
+[![Github last commit](https://img.shields.io/github/last-commit/oe-alliance-plugins/Moviearchiver)](https://github.com/oe-alliance-plugins/Moviearchiver)
+[![GitHub Activity](https://img.shields.io/github/commit-activity/y/oe-alliance-plugins/Moviearchiver.svg?label=commits)](https://github.com/oe-alliance-plugins/Moviearchiver/commits)
+[![GitHub Activity](https://img.shields.io/github/commit-activity/m/oe-alliance-plugins/Moviearchiver.svg?label=commits)](https://github.com/oe-alliance-plugins/Moviearchiver/commits)
 
-Wichtig:
-- Nutzung des Scripts auf eigene Gefahr!
+## SonarCloud status
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=bugs)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=oe-alliance-plugins_Moviearchiver&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
 
-Zu Testen:
-- Was passiert wenn der EMC offen ist während eine Archivierung im Hintergrund gestartet wird?
-- Was passiert wenn eine Aufnahme gerade abgespielt wird die im Hintergrund archiviert werden soll?
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=oe-alliance-plugins_Moviearchiver)
 
-Bisher getestet auf folgenden Images/Receivern:
-- openATV / Gigablue Quad
-- HDF / ET9000
+---
 
-Screenshot:
-![Screenshot](https://raw.github.com/MovieArchiver/enigma2-plugin-extensions-moviearchiver/master/screenshots/MovieArchiver.jpg)
+### 📜 License Information [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+This is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation
+
+This plugin is released under GPLv3. See [LICENSE](https://www.gnu.org/licenses/gpl-3.0.html#license-text) for full details.
+
+<img width="120" height="58" alt="GPLv3_Logo svg" src="https://github.com/user-attachments/assets/67d32b0a-2a44-4fa9-a972-202daf28808e" />
+
+---
+
+### 🤝 Contributing & Contact
+
+Moviearchiver is created by users for users and we welcome every contribution. There are no highly paid developers. There are only users who have seen a problem and done their best to fix it. This means Moviearchiver will always need the contributions of users like you. How can you get involved?
+
+For questions or feedback, feel free and please open an issue or contribute with a Pull Request!
+
+Pull requests are very welcome for:
+- **Coding:** Developers can help by fixing a bug, adding new features, Integration improvements, Feature enhancements
+- **Localization:** Translate into your native language.
+- **Helping users:** Our support process relies on enthusiastic contributors like you to help others.
+
+Your contribution is very welcome! Follow these steps:
+
+1. 🍴 Fork this repository
+2. 🔄 Create a branch for your feature
+3. 💻 Make your changes
+4. ✅ Commit using conventional messages
+5. 📤 Push to your branch
+6. 🔍 Open a Pull Request
+
+Enjoy and help us improve it today. :)
+
+### 🚨 Disclaimer
+
+The project author is not responsible for how this software is used by others. It is not intended to be used for accessing or distributing copyrighted materials without authorization.
+Users are solely responsible for determining the legality of their actions.
+
+This repository has no control over the streams, links, or the legality of the content provided by the different hosts (including all mirror sites). It is the end user's responsibility to ensure the legal use of these streams, and we strongly recommend verifying that the content complies with all applicable laws, including copyright laws and regulations of your countrys jurisdiction before use.
+
+---
+
+⭐️ If you find this plugin useful, please give it a star on GitHub!
+Thanks! ❤️ 💞 💖 ❤️‍🔥 💗

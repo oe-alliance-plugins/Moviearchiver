@@ -85,3 +85,4 @@ def getTargetPathValue():
 
 
 __all__ = ['_', 'config', 'printToConsole', 'getSourcePath', 'getSourcePathValue', 'getTargetPath', 'getTargetPathValue']
+__version__ = "0.3"
