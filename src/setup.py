@@ -3,7 +3,7 @@ import setup_translate
 
 pkg = 'Extensions.Moviearchiver'
 setup(name='enigma2-plugin-extensions-moviearchiver',
-       version='0.2d',
+       version='0.2',
        description='Archive or Backup your Movielist automatically. MovieArchiver by svox',
        package_dir={pkg: 'Moviearchiver'},
        packages=[pkg],
