@@ -1,232 +1,207 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the MovieArchiver package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-04-19 15:36+0200\n"
+"Project-Id-Version: MovieArchiver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-18 17:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=cp1252\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.5\n"
 
-
-#: MovieArchiver\ExcludeDirsView.py:63
-msgid "Cancel"
+#: ../plugin.py:579 ../plugin.py:584
+msgid "-------------------------------------------------------------"
 msgstr ""
 
-#: MovieArchiver\ExcludeDirsView.py:64
-msgid "Save"
+#: ../plugin.py:585
+msgid "Archive Folder"
 msgstr ""
 
-#: MovieArchiver\ExcludeDirsView.py:94
-msgid "Select Exclude Dirs"
+#: ../plugin.py:586
+msgid "Archive Folder Limit (in GB)"
 msgstr ""
 
-#: MovieArchiver\ExcludeDirsView.py:99
-msgid "Deselect"
-msgstr ""
-
-#: MovieArchiver\ExcludeDirsView.py:101
-msgid "Select"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:45
-msgid "...."
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:46
-msgid "MovieArchiverView Setup Actions"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:62
-#: MovieArchiver\MovieArchiverView.py:266
+#: ../plugin.py:575
 msgid "Archive automatically"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:62
-#: MovieArchiver\MovieArchiverView.py:266
-msgid "If yes, the MovieArchiver automatically moved or copied (if 'Backup Movies' is on) movies to archive folder if limit is reached"
+#: ../plugin.py:669
+msgid "Archive now!"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:63
-#: MovieArchiver\MovieArchiverView.py:267
+#: ../plugin.py:713
+msgid "Archive or backup your movies"
+msgstr ""
+
+#: ../plugin.py:366
+msgid "Backup Archive. Synchronization started"
+msgstr ""
+
+#: ../plugin.py:576
 msgid "Backup Movies instead of Archive"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:63
-#: MovieArchiver\MovieArchiverView.py:267
+#: ../plugin.py:359
+msgid ""
+"Backup Target Folder is not writable.\n"
+"Please check the permission."
+msgstr ""
+
+#: ../plugin.py:669
+msgid "Backup now!"
+msgstr ""
+
+#: ../plugin.py:455
+msgid "Cancel"
+msgstr ""
+
+#: ../plugin.py:663
+msgid "Choose folder"
+msgstr ""
+
+#: ../plugin.py:488
+msgid "Deselect"
+msgstr ""
+
+#: ../plugin.py:583
+msgid "Exclude folders"
+msgstr ""
+
+#: ../plugin.py:577
+msgid "If a record is in progress or start in the next minutes after a record, the archiver skipped till the next record"
+msgstr ""
+
+#: ../plugin.py:586
+msgid "If limit is reach, no movies will anymore moved to the archive"
+msgstr ""
+
+#: ../plugin.py:575
+msgid "If yes, the MovieArchiver automatically moved or copied (if 'Backup Movies' is on) movies to archive folder if limit is reached"
+msgstr ""
+
+#: ../plugin.py:576
 msgid ""
 "If yes, the movies will only be copy to the archive movie folder and not moved.\n"
 "\n"
 "Currently for synchronize, it comparing only fileName and fileSize."
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:64
-#: MovieArchiver\MovieArchiverView.py:268
-msgid "If a record is in progress or start in the next minutes after a record, the archiver skipped till the next record"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:64
-#: MovieArchiver\MovieArchiverView.py:268
-msgid "Skip archiving during records"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:65
-#: MovieArchiver\MovieArchiverView.py:269
-msgid "Show notification if archive limit reached"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:65
-#: MovieArchiver\MovieArchiverView.py:269
-msgid "Show notification window message if 'Archive Movie Folder Limit' is reached"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:66 MovieArchiver\MovieArchiverView.py:73
-#: MovieArchiver\MovieArchiverView.py:270
-#: MovieArchiver\MovieArchiverView.py:277
-msgid "-------------------------------------------------------------"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:67
-#: MovieArchiver\MovieArchiverView.py:271
+#: ../plugin.py:580
 msgid "Movie Folder"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:67
-#: MovieArchiver\MovieArchiverView.py:271
+#: ../plugin.py:581
+msgid "Movie Folder Limit (in GB)"
+msgstr ""
+
+#: ../plugin.py:581
+msgid "Movie Folder free diskspace limit in GB. If free diskspace reach under this limit, the MovieArchiver will move old records to the archive"
+msgstr ""
+
+#: ../plugin.py:287
+msgid "MovieArchiver: Archiving finished."
+msgstr ""
+
+#: ../plugin.py:289
+msgid "MovieArchiver: Movies already archived."
+msgstr ""
+
+#: ../plugin.py:270
+msgid "MovieArchiver: Stop Archiving."
+msgstr ""
+
+#: ../plugin.py:364
+msgid "No files for backup found."
+msgstr ""
+
+#: ../plugin.py:456
+msgid "Save"
+msgstr ""
+
+#: ../plugin.py:488
+msgid "Select"
+msgstr ""
+
+#: ../plugin.py:484
+msgid "Select Exclude Dirs"
+msgstr ""
+
+#: ../plugin.py:583
+msgid "Selected Directories wont be backuped."
+msgstr ""
+
+#: ../plugin.py:578
+msgid "Show notification if archive limit reached"
+msgstr ""
+
+#: ../plugin.py:578
+msgid "Show notification window message if 'Archive Movie Folder Limit' is reached"
+msgstr ""
+
+#: ../plugin.py:577
+msgid "Skip archiving during records"
+msgstr ""
+
+#: ../plugin.py:315
+msgid ""
+"Skip archiving!\n"
+"A record is running or start in the next minutes."
+msgstr ""
+
+#: ../plugin.py:580
 msgid ""
 "Source folder / HDD\n"
 "\n"
 "Press 'Ok' to open path selection view"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:68
-#: MovieArchiver\MovieArchiverView.py:272
-msgid "Movie Folder Limit (in GB)"
+#: ../plugin.py:352
+msgid "Start archiving."
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:68
-#: MovieArchiver\MovieArchiverView.py:272
-msgid "Movie Folder free diskspace limit in GB. If free diskspace reach under this limit, the MovieArchiver will move old records to the archive"
+#: ../plugin.py:667
+msgid "Stop Backup"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:71
-#: MovieArchiver\MovieArchiverView.py:275
-msgid "Exclude folders"
+#: ../plugin.py:667
+msgid "Stop archiving"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:71
-#: MovieArchiver\MovieArchiverView.py:275
-msgid "Selected Directories wont be backuped."
+#: ../plugin.py:319
+msgid ""
+"Stop archiving!\n"
+"Can't archive movie because archive-harddisk limit reached!"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:74
-#: MovieArchiver\MovieArchiverView.py:278
-msgid "Archive Folder"
+#: ../plugin.py:311
+msgid ""
+"Stop archiving!\n"
+"Can't archive movies to the same hard drive!!\n"
+"Please change the paths in the MovieArchiver settings."
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:74
-#: MovieArchiver\MovieArchiverView.py:278
+#: ../plugin.py:585
 msgid ""
 "Target folder / HDD where the movies will moved or backuped.\n"
 "\n"
 "Press 'Ok' to open path selection view"
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:75
-#: MovieArchiver\MovieArchiverView.py:279
-msgid "Archive Folder Limit (in GB)"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:75
-#: MovieArchiver\MovieArchiverView.py:279
-msgid "If limit is reach, no movies will anymore moved to the archive"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:104
-#: MovieArchiver\MovieArchiverView.py:291
+#: ../plugin.py:596
+#, python-format
 msgid ""
 "The directory %s is not writable.\n"
 "Make sure you select a writable directory instead."
 msgstr ""
 
-#: MovieArchiver\MovieArchiverView.py:111
-#: MovieArchiver\MovieArchiverView.py:380
-msgid "Stop Backup"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:113
-#: MovieArchiver\MovieArchiverView.py:382
-msgid "Stop archiving"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:116
-#: MovieArchiver\MovieArchiverView.py:385
-msgid "Backup now!"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:118
-#: MovieArchiver\MovieArchiverView.py:387
-msgid "Archive now!"
-msgstr ""
-
-#: MovieArchiver\MovieArchiverView.py:156
-#: MovieArchiver\MovieArchiverView.py:371
-msgid "Choose folder"
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:75
-msgid "Stop archiving!! Can't archive movies to the same hard drive!! Please change the paths in the MovieArchiver settings."
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:79
-msgid "Skip archiving. A record is running or start in the next minutes."
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:83
-msgid "Stop archiving! Can't archive movie because archive-harddisk limit reached!"
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:135
-msgid "Start archiving."
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:138
+#: ../plugin.py:355
 msgid "limit not reached. Wait for next Event."
 msgstr ""
-
-#: MovieArchiver\MovieManager.py:147
-msgid ""
-"Backup Target Folder is not writable.\n"
-"Please check the permission."
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:153
-msgid "No files for backup found."
-msgstr ""
-
-#: MovieArchiver\MovieManager.py:156
-msgid "Backup Archive. Synchronization started"
-msgstr ""
-
-#: MovieArchiver\NotificationController.py:83
-msgid "MovieArchiver: Stop Archiving."
-msgstr ""
-
-#: MovieArchiver\NotificationController.py:107
-msgid "MovieArchiver: Archiving finished."
-msgstr ""
-
-#: MovieArchiver\NotificationController.py:109
-msgid "MovieArchiver: Movies already archived."
-msgstr ""
-
-#: MovieArchiver\plugin.py:67
-msgid "Archive or backup your movies"
-msgstr ""
-
