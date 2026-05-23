@@ -23,7 +23,7 @@
 # PYTHON IMPORTS
 from collections import deque
 from os import makedirs, listdir, walk, access, stat, statvfs, W_OK
-from os.path import getmtime, join, basename, isfile, isdir, ismount, islink, realpath, dirname, realpath, exists, splitext, getsize
+from os.path import getmtime, join, basename, isfile, isdir, ismount, islink, realpath, dirname, exists, splitext, getsize
 from shlex import quote
 from six import iteritems
 from sys import exc_info, stdout
@@ -42,7 +42,6 @@ from Screens.LocationBox import MovieLocationBox
 from Screens.MessageBox import MessageBox
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox
 from Tools import Notifications
 import NavigationInstance
 
@@ -65,7 +64,7 @@ class MAglobals():
 maglobals = MAglobals()
 
 
-class MAhelper():
+class MAhelper:
 	def hasEventListener(self, eventType, function):
 		for e in maglobals.HANDLER:
 			if e[0] == eventType and e[1] == function:
@@ -73,7 +72,7 @@ class MAhelper():
 		return False
 
 	def addEventListener(self, eventType, function):
-		if self.hasEventListener(eventType, function) == False:
+		if not self.hasEventListener(eventType, function):
 			maglobals.HANDLER.append([eventType, function])
 
 	def removeEventListener(self, eventType, function):
@@ -120,7 +119,7 @@ class MAhelper():
 						if pathToCheck[:len(excludeDir)] == excludeDir:
 							skipFile = True
 							break
-				if skipFile == True:
+				if skipFile:
 					continue
 				rs[join(dirPath.replace(mediapath, ""), fileName)] = fullFilePath
 		return rs
@@ -141,7 +140,7 @@ class MAhelper():
 	def removeSymbolicLinks(self, pathList):
 		tmpExcludedDirs = []
 		for folder in pathList:
-			if islink(folder) == False:
+			if not islink(folder):
 				tmpExcludedDirs.append(folder)
 		return tmpExcludedDirs
 
@@ -248,7 +247,7 @@ class NotificationController(MAhelper, object):  # classdocs
 		return self.view
 
 	def start(self):
-		if config.plugins.MovieArchiver.enabled.value and self.recordNotification.isActive() == False:
+		if config.plugins.MovieArchiver.enabled.value and not self.recordNotification.isActive():
 			self.addEventListener(maglobals.RECORD_FINISHED, self.__recordFinishedHandler)
 			self.recordNotification.startTimer()
 
@@ -258,7 +257,7 @@ class NotificationController(MAhelper, object):  # classdocs
 
 	def startArchiving(self, showUIMessage=False):
 		self.showUIMessage = showUIMessage
-		if self.showUIMessage == True:
+		if self.showUIMessage:
 			self.addEventListener(maglobals.QUEUE_FINISHED, self.__queueFinishedHandler)
 		else:
 			self.removeEventListener(maglobals.QUEUE_FINISHED, self.__queueFinishedHandler)
@@ -283,13 +282,13 @@ class NotificationController(MAhelper, object):  # classdocs
 		self.startArchiving()
 
 	def __queueFinishedHandler(self, hasArchiveMovies):
-		if hasArchiveMovies == True:
+		if hasArchiveMovies:
 			self.showMessage(_("MovieArchiver: Archiving finished."), 5)
 		else:
 			self.showMessage(_("MovieArchiver: Movies already archived."), 5)
 
 	def __infoMsgHandler(self, msg, timeout=10):
-		if self.showUIMessage == True:
+		if self.showUIMessage:
 			self.showMessage(msg, timeout)
 		else:
 			printToConsole(msg)
@@ -346,7 +345,7 @@ class MovieManager(MAhelper, object):  # classdocs
 						break
 					# Target Disk: check if limit is reached if we move this file
 					breakMoveNext = self.checkReachedLimitIfMoveFile(getTargetPathValue(), config.plugins.MovieArchiver.targetLimit.getValue(), moviesFileSize)
-					if breakMoveNext == False:
+					if not breakMoveNext:
 						break
 					tries += 1
 				self.dispatchEvent(maglobals.INFO_MSG, _("Start archiving."), 5)
@@ -355,7 +354,7 @@ class MovieManager(MAhelper, object):  # classdocs
 			self.dispatchEvent(maglobals.INFO_MSG, _("limit not reached. Wait for next Event."), 5)
 
 	def backupFiles(self, sourcePath, targetPath):
-		if self.pathIsWriteable(targetPath) == False:  # sync files, check if target path is writable
+		if not self.pathIsWriteable(targetPath):  # sync files, check if target path is writable
 			self.dispatchEvent(maglobals.INFO_MSG, _("Backup Target Folder is not writable.\nPlease check the permission."), 10)
 			return
 		#check if some files to archive available
@@ -386,7 +385,7 @@ class MovieManager(MAhelper, object):  # classdocs
 			targetPathWithSubFolder = join(targetPath, subFolderPath)
 			newExecCommand = 'cp "' + sourceFile + '" "' + targetPathWithSubFolder + '"'
 			folder = dirname(targetPathWithSubFolder)  # create folders if doesnt exists
-			if exists(folder) == False:
+			if not exists(folder):
 				makedirs(folder)
 			self.__addExecCommandToArchiveQueue(newExecCommand)
 
@@ -549,13 +548,12 @@ class MovieArchiverView(MAhelper, ConfigListScreen, Screen):
 		self["archiveButton"] = StaticText()
 		self.NOTIFICATIONCONTROLLER = NotificationController.getInstance()
 		self.NOTIFICATIONCONTROLLER.setView(self)
-		self["actions"] = ActionMap(["SetupActions",
-							   		"OkCancelActions",
-									"ColorActions"], {"cancel": self.cancel,
-														"save": self.save,
-														"ok": self.ok,
-														"yellow": self.yellow
-													}, -2)
+		self["actions"] = ActionMap(["SetupActions", "OkCancelActions", "ColorActions"], {
+			"cancel": self.cancel,
+			"save": self.save,
+			"ok": self.ok,
+			"yellow": self.yellow
+		}, -2)
 		self.onLayoutFinish.append(self.onLayoutFinished)
 
 	def onLayoutFinished(self):
@@ -566,7 +564,7 @@ class MovieArchiverView(MAhelper, ConfigListScreen, Screen):
 			self["config"].onSelectionChanged.append(self.__updateHelp)
 		self['config'].l.setItemHeight(int(30 * (1.5 if getDesktop(0).size().height() > 720 else 1.0)))
 		self.__updateArchiveNowButtonText()
-		if self.NOTIFICATIONCONTROLLER.isArchiving() == True:
+		if self.NOTIFICATIONCONTROLLER.isArchiving():
 			self.addEventListener(maglobals.QUEUE_FINISHED, self.__archiveFinished)
 		self.onClose.append(self.__onClose)
 
@@ -579,7 +577,7 @@ class MovieArchiverView(MAhelper, ConfigListScreen, Screen):
 		menuList.append(getConfigListEntry(_("-------------------------------------------------------------"), ))
 		menuList.append(getConfigListEntry(_("Movie Folder"), getSourcePath(), _("Source folder / HDD\n\nPress 'Ok' to open path selection view")))
 		menuList.append(getConfigListEntry(_("Movie Folder Limit (in GB)"), config.plugins.MovieArchiver.sourceLimit, _("Movie Folder free diskspace limit in GB. If free diskspace reach under this limit, the MovieArchiver will move old records to the archive")))
-		if config.plugins.MovieArchiver.backup.getValue() == True:
+		if config.plugins.MovieArchiver.backup.value:
 			menuList.append(getConfigListEntry(_("Exclude folders"), config.plugins.MovieArchiver.excludeDirs, _("Selected Directories wont be backuped.")))
 		menuList.append(getConfigListEntry(_("-------------------------------------------------------------"), ))
 		menuList.append(getConfigListEntry(_("Archive Folder"), getTargetPath(), _("Target folder / HDD where the movies will moved or backuped.\n\nPress 'Ok' to open path selection view")))
@@ -597,7 +595,7 @@ class MovieArchiverView(MAhelper, ConfigListScreen, Screen):
 			return False
 
 	def yellow(self):
-		if self.NOTIFICATIONCONTROLLER.isArchiving() == True:
+		if self.NOTIFICATIONCONTROLLER.isArchiving():
 			self.NOTIFICATIONCONTROLLER.stopArchiving()
 		else:
 			self.NOTIFICATIONCONTROLLER.startArchiving(True)
@@ -663,10 +661,10 @@ class MovieArchiverView(MAhelper, ConfigListScreen, Screen):
 		self.session.openWithCallback(self.pathSelected, MovieLocationBox, _("Choose folder"), self.getCurrent().getValue(), minFree=100)
 
 	def __updateArchiveNowButtonText(self):  # Private Methods
-		if self.NOTIFICATIONCONTROLLER.isArchiving() == True:
-			archiveButtonText = _("Stop Backup") if config.plugins.MovieArchiver.backup.getValue() == True else _("Stop archiving")
+		if self.NOTIFICATIONCONTROLLER.isArchiving() is True:
+			archiveButtonText = _("Stop Backup") if config.plugins.MovieArchiver.backup.value is True else _("Stop archiving")
 		else:
-			archiveButtonText = _("Backup now!") if config.plugins.MovieArchiver.backup.getValue() == True else _("Archive now!")
+			archiveButtonText = _("Backup now!") if config.plugins.MovieArchiver.backup.value is True else _("Archive now!")
 		self["archiveButton"].setText(archiveButtonText)
 
 	def __archiveFinished(self):
