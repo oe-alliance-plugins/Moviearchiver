@@ -49,7 +49,7 @@ import NavigationInstance
 from . import printToConsole, getSourcePathValue, getTargetPathValue, getSourcePath, getTargetPath, _  # for localized messages
 
 
-class MAglobals():
+class MAglobals:
 	HANDLER = []
 	NOTIFICATIONCONTROLLER = None
 	MAX_TRIES = 50  # max tries (movies to move) after startArchiving recursion will end
@@ -225,7 +225,7 @@ class RecordNotification(MAhelper):
 			self.dispatchEvent(maglobals.RECORD_FINISHED)  # del timer
 
 
-class NotificationController(MAhelper, object):  # classdocs
+class NotificationController(MAhelper):  # classdocs
 	instance = None
 
 	def __init__(self):  # Constructor
@@ -294,7 +294,7 @@ class NotificationController(MAhelper, object):  # classdocs
 			printToConsole(msg)
 
 
-class MovieManager(MAhelper, object):  # classdocs
+class MovieManager(MAhelper):  # classdocs
 	def __init__(self):  # Constructor
 		self.execCommand = ""
 		self.executionQueueList = deque()

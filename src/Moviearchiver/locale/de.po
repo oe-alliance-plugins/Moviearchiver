@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: MovieArchiver\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-18 17:49+0200\n"
-"PO-Revision-Date: 2022-04-23 11:22+0200\n"
-"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
+"PO-Revision-Date: 2026-10-09 21:35+0200\n"
+"Last-Translator: Pike_Bishop <openatv team>\n"
 "Language-Team: svox <svox>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: /Users/sebastian/Projekte/MovieArchiver/src\n"
@@ -43,7 +43,7 @@ msgstr "Jetzt archivieren!"
 
 #: ../plugin.py:713
 msgid "Archive or backup your movies"
-msgstr ""
+msgstr "Filme archivieren oder backuppen"
 
 #: ../plugin.py:366
 msgid "Backup Archive. Synchronization started"
@@ -160,11 +160,12 @@ msgid "Skip archiving during records"
 msgstr "Während einer Aufnahme nicht Archivieren"
 
 #: ../plugin.py:315
-#, fuzzy
 msgid ""
 "Skip archiving!\n"
 "A record is running or start in the next minutes."
-msgstr "Archivierung wird übersprungen da gerade eine Aufnahme läuft oder in den nächsten Minuten startet."
+msgstr ""
+"Archivierung übersprungen!\n"
+"Eine Aufnahme läuft oder startet in den nächsten Minuten."
 
 #: ../plugin.py:580
 msgid ""
@@ -189,19 +190,22 @@ msgid "Stop archiving"
 msgstr "Archivieren beenden"
 
 #: ../plugin.py:319
-#, fuzzy
 msgid ""
 "Stop archiving!\n"
 "Can't archive movie because archive-harddisk limit reached!"
-msgstr "Archivierung wurde gestoppt! Film kann nicht archiviert werden, da das Limit der Archivierungs-Festplatte erreicht wurde!"
+msgstr ""
+"Archivierung gestoppt!\n"
+"Film kann nicht archiviert werden, wegen Limit-Überschreitung der Archivierungs-Festplatte!"
 
 #: ../plugin.py:311
-#, fuzzy
 msgid ""
 "Stop archiving!\n"
 "Can't archive movies to the same hard drive!!\n"
 "Please change the paths in the MovieArchiver settings."
-msgstr "Archivierung abgebrochen!! Die Archivierung kann nicht auf der gleichen Festplatte gestartet werden. Bitte geben Sie einen anderen Pfad in den MovieArchiver-Einstellungen  an."
+msgstr ""
+"Archivierung abgebrochen!\n"
+"Archivierung auf gleicher Festplatte nicht möglich!!\n"
+"Bitte einen anderen Pfad in den MovieArchiver-Einstellungen wählen."
 
 #: ../plugin.py:585
 msgid ""

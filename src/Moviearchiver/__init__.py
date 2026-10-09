@@ -29,7 +29,7 @@ from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_HDD, SCOPE_PLUGINS
 
 PluginLanguageDomain = "MovieArchiver"
-PluginLanguagePath = "Extensions/MovieArchiver/locale"
+PluginLanguagePath = "Extensions/Moviearchiver/locale"
 
 
 def localeInit():
@@ -45,7 +45,7 @@ language.addCallback(localeInit)
 
 
 def printToConsole(msg):
-	print("[MovieArchiver] %s" % msg)
+	print(f"[MovieArchiver] {msg}")
 
 
 # Define Settings Entries
@@ -85,4 +85,4 @@ def getTargetPathValue():
 
 
 __all__ = ['_', 'config', 'printToConsole', 'getSourcePath', 'getSourcePathValue', 'getTargetPath', 'getTargetPathValue']
-__version__ = "0.3"
+__version__ = "0.4"
